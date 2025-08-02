@@ -4,8 +4,8 @@ import transformBlocks from "@/lib/functions/transformBlocks";
 import { gql } from "graphql-request";
 
 const query = gql`
-query PostPage {
-  post(id: "specjalista-seo-kim-jest", idType: SLUG) {
+ query PostPage($slug: ID!) {
+    post(id: $slug, idType: SLUG) {
     blocks {
       ... on AcfCtaBoxBlock {
         attributes {
@@ -245,11 +245,9 @@ query PostPage {
 `
 
 
-export default async function GET_POST() {
+export default async function GET_POST(slug: string) {
   try {
-    const { post }: PostPageRequest = await WordpressGQL.request(query);
-    const img = post.featuredImage;
-    console.log(`img`, img)
+    const { post }: PostPageRequest = await WordpressGQL.request(query, { slug });
     const response: PostPageResponse = {
       page: {
         blocks: transformBlocks(post.blocks ?? []),

@@ -107,11 +107,12 @@ declare global {
     }
 
     type TableBlock = {
-        name: 'core/table',
+        name: 'core/table';
         caption: string;
-        head?: Array<string>;
-        foot?: Array<string>;
-        body: Array<string>;
+        head?: string[];
+        foot?: string[];
+        cols: number;
+        body: string[];
         order: number;
     }
 

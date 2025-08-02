@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { IoCalendarClear as Calendar } from "react-icons/io5";
+import { IoCalendarClear as Calendar, IoPricetag as Tag } from "react-icons/io5";
 import { Breadcrumbs } from "@/ui/index";
 import moment from "moment";
 
@@ -22,8 +22,16 @@ export default function Hero({ category, date, introduction, readingTime, title,
                 <Breadcrumbs />
                 <h1 className="text-4xl text-abbey-950 font-bold text-balance  md:text-6xl lg:text-7xl" >{title}</h1>
                 <p className="text-md text-balance leading-[2] text-abbey-700 font-[500] lg:text-lg" dangerouslySetInnerHTML={{ __html: introduction }} />
-                <div className="flex flex-row flex-wrap space-x-3 space-y-1 my-4 w-fit bg-neutral-300/30 px-4 py-3 rounded-lg">
-                    <p className="flex items center justify-center flex-row space-x-1">
+                <div className="flex flex-row flex-wrap justify-start space-x-2 space-y-1 my-1 w-fit">
+                    <p className="flex items-center justify-center flex-row space-x-1 bg-flamingo-200/30 px-4 py-3 rounded-lg">
+                        <i className="size-5 flex items-center justify-center text-lg">
+                            <Tag />
+                        </i>
+                        <span className="text-md font-bold text-abbey-600 dark:text-abbey-300">
+                            {category.label}
+                        </span>
+                    </p>
+                    <p className="flex items-center justify-center flex-row space-x-1 bg-neutral-200/30 px-4 py-3 rounded-lg">
                         <i className="size-5 flex items-center justify-center text-lg">
                             <Calendar />
                         </i>

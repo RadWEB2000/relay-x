@@ -50,14 +50,20 @@ export default function transformBlocks(blocks: Array<WP_GutenbergBlocks>): Arra
     }
     function table(block: WP_TableBlock): TableBlock {
         const { attributes: { body, foot, caption, head } } = block;
+        const headRow: string[] | undefined = head?.[0]?.cells?.map(c => c.content);
+        const footRow: string[] | undefined = foot?.[0]?.cells?.map(c => c.content);
+        const bodyRows: string[][] = (body ?? []).map(r => r?.cells?.map(c => c.content) ?? []);
+        const cols = headRow?.length ?? footRow?.length ?? bodyRows[0]?.length ?? 0;
+        const flatBody: string[] = bodyRows.flat();
         return {
-            body: body[0].cells.map(item => item.content),
-            caption: caption,
-            name: block.name,
+            name: 'core/table',
+            caption: caption ?? '',
+            head: headRow,
+            foot: footRow,
+            cols,
+            body: flatBody,
             order: block.order,
-            foot: foot ? foot[0].cells.map(item => item.content) : [],
-            head: head ? head[0].cells.map(item => item.content) : [],
-        }
+        };
     }
     function cta(block: WP_CallToActionBlock): CallToActionBlock {
         const parsed = JSON.parse(block.attributes.data);

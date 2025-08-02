@@ -7,9 +7,11 @@ import { Hero } from "@/views/post";
 import Link from "next/link";
 import Image from "next/image";
 
-export default async function PostPage() {
+export default async function PostPage({ params }: { params: { slug: string } }) {
 
-    const { page: { blocks, category, date, excerpt, tags, introduction, readingTime, image, title, author } } = await GET_POST();
+    const { slug } = params;
+
+    const { page: { blocks, category, date, excerpt, tags, introduction, readingTime, image, title, author } } = await GET_POST(slug);
 
     const toc: TableOfContentsBlock | null = blocks ? blocks.filter(item => item.name === 'rank-math/toc-block').map((item): TableOfContentsBlock => {
         return item

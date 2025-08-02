@@ -5,28 +5,29 @@ function chunk<T>(arr: T[], size: number): T[][] {
     return out;
 }
 
-export default function Table({ body, caption, foot, head }: TableBlock) {
-    const columnCount =
-        head?.length ?? foot?.length ?? body?.length ?? 0;
+export default function Table({ body, caption, foot, head, cols }: TableBlock) {
+    const columnCount = cols || head?.length || foot?.length || 0;
+    console.log(`cols`, cols)
     const rows = chunk(body ?? [], Math.max(columnCount, 1));
+
     const padRow = (cells: string[]): string[] =>
-        cells.length >= columnCount
-            ? cells
-            : [...cells, ...Array(columnCount - cells.length).fill("")];
+        cells.length >= columnCount ? cells : [...cells, ...Array(columnCount - cells.length).fill("")];
+
     return (
-        <table className="w-full text-lg overflow-x-auto border-collapse [border-spacing:0]">
-            {caption ? (
-                <caption className="text-left mb-2 text-gray-500">{caption}</caption>
-            ) : null}
+        <table className="w-full text-lg border-separate [border-spacing:0.4rem]">
+            {caption ? <caption className="text-left mb-2 text-gray-500">{caption}</caption> : null}
 
             {head?.length ? (
                 <thead>
-                    <tr className="">
+                    <tr>
                         {padRow(head).map((h, i) => (
                             <th
-                                key={`th-${i}`}
-                                scope="col"
-                                className="border px-3 py-2 text-left font-bold bg-flamingo-300"
+                                key={i}
+                                className={[
+                                    "px-3 py-2 text-left font-bold ",
+                                    i === 0 ? "rounded-l-md" : "",
+                                    i === columnCount - 1 ? "rounded-r-md" : "",
+                                ].join(" ")}
                             >
                                 {h}
                             </th>
@@ -39,9 +40,14 @@ export default function Table({ body, caption, foot, head }: TableBlock) {
                 {rows.map((r, rIdx) => {
                     const cells = padRow(r);
                     return (
-                        <tr key={`tr-${rIdx}`} className={rIdx % 2 ? "bg-flamingo-50/50" : ""}>
+                        <tr key={rIdx}>
                             {cells.map((c, cIdx) => (
-                                <td key={`td-${rIdx}-${cIdx}`} className="border px-3 py-2 align-top">
+                                <td
+                                    key={cIdx}
+                                    className={[
+                                        "px-3 py-2 bg-white rounded-md"
+                                    ].join(" ")}
+                                >
                                     {c}
                                 </td>
                             ))}
@@ -52,9 +58,16 @@ export default function Table({ body, caption, foot, head }: TableBlock) {
 
             {foot?.length ? (
                 <tfoot>
-                    <tr className="">
+                    <tr>
                         {padRow(foot).map((f, i) => (
-                            <td key={`tf-${i}`} className="border px-3 py-2 font-bold bg-flamingo-200">
+                            <td
+                                key={i}
+                                className={[
+                                    "px-3 py-2 font-bold bg-flamingo-200",
+                                    i === 0 ? "rounded-l-md" : "",
+                                    i === columnCount - 1 ? "rounded-r-md" : "",
+                                ].join(" ")}
+                            >
                                 {f}
                             </td>
                         ))}
@@ -62,5 +75,5 @@ export default function Table({ body, caption, foot, head }: TableBlock) {
                 </tfoot>
             ) : null}
         </table>
-    )
+    );
 }
