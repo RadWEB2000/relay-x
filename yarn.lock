@@ -110,6 +110,11 @@
     "@eslint/core" "^0.15.1"
     levn "^0.4.1"
 
+"@graphql-typed-document-node/core@^3.2.0":
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.2.0.tgz#5f3d96ec6b2354ad6d8a28bf216a1d97b5426861"
+  integrity sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ==
+
 "@humanfs/core@^0.19.1":
   version "0.19.1"
   resolved "https://registry.yarnpkg.com/@humanfs/core/-/core-0.19.1.tgz#17c55ca7d426733fe3c561906b8173c336b40a77"
@@ -548,6 +553,27 @@
   version "19.1.6"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-19.1.6.tgz#4af629da0e9f9c0f506fc4d1caa610399c595d64"
   integrity sha512-4hOiT/dwO8Ko0gV1m/TJZYk3y0KBnY9vzDh7W+DH17b2HFSOGgdj33dhihPeuy3l0q23+4e+hoXHV6hCC4dCXw==
+
+"@types/react-highlight@^0.12.8":
+  version "0.12.8"
+  resolved "https://registry.yarnpkg.com/@types/react-highlight/-/react-highlight-0.12.8.tgz#46476e6ae60f21a60f5b1fd1954944c63f4b23d9"
+  integrity sha512-V7O7zwXUw8WSPd//YUO8sz489J/EeobJljASGhP0rClrvq+1Y1qWEpToGu+Pp7YuChxhAXSgkLkrOYpZX5A62g==
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-icons@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@types/react-icons/-/react-icons-3.0.0.tgz#27ca2823a6add881d06a371bfff093afc1b9c829"
+  integrity sha512-Vefs6LkLqF61vfV7AiAqls+vpR94q67gunhMueDznG+msAkrYgRxl7gYjNem/kZ+as2l2mNChmF1jRZzzQQtMg==
+  dependencies:
+    react-icons "*"
+
+"@types/react@*":
+  version "19.1.9"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-19.1.9.tgz#f42b24f35474566a39b5c3a98e4d0c425b79a849"
+  integrity sha512-WmdoynAX8Stew/36uTSVMcLJJ1KRh6L3IZRx1PZ7qJtBqT3dYTgyDTx8H1qoRghErydW7xw9mSJ3wS//tCRpFA==
+  dependencies:
+    csstype "^3.0.2"
 
 "@types/react@^19":
   version "19.1.8"
@@ -1680,6 +1706,18 @@ graphemer@^1.4.0:
   resolved "https://registry.yarnpkg.com/graphemer/-/graphemer-1.4.0.tgz#fb2f1d55e0e3a1849aeffc90c4fa0dd53a0e66c6"
   integrity sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==
 
+graphql-request@^7.2.0:
+  version "7.2.0"
+  resolved "https://registry.yarnpkg.com/graphql-request/-/graphql-request-7.2.0.tgz#af4aa25f27a087dd4fc93a4ff54a0f59c4487269"
+  integrity sha512-0GR7eQHBFYz372u9lxS16cOtEekFlZYB2qOyq8wDvzRmdRSJ0mgUVX1tzNcIzk3G+4NY+mGtSz411wZdeDF/+A==
+  dependencies:
+    "@graphql-typed-document-node/core" "^3.2.0"
+
+graphql@^16.11.0:
+  version "16.11.0"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-16.11.0.tgz#96d17f66370678027fdf59b2d4c20b4efaa8a633"
+  integrity sha512-mS1lbMsxgQj6hge1XZ6p7GPhbrtFwUFYi3wRzXAC/FmYnyXMTvvI3td3rjmQ2u8ewXueaSvRPWaEcgVVOT9Jnw==
+
 has-bigints@^1.0.2:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/has-bigints/-/has-bigints-1.1.0.tgz#28607e965ac967e03cd2a2c70a2636a1edad49fe"
@@ -1722,6 +1760,16 @@ hasown@^2.0.2:
   integrity sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==
   dependencies:
     function-bind "^1.1.2"
+
+highlight.js@^10.5.0:
+  version "10.7.3"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-10.7.3.tgz#697272e3991356e40c3cac566a74eef681756531"
+  integrity sha512-tzcUFauisWKNHaRkN4Wjl/ZA07gENAjFl3J/c480dprkGTg5EQstgaNFqBfUqCq54kZRIEcreTsAgF/m2quD7A==
+
+highlight.js@^11.11.1:
+  version "11.11.1"
+  resolved "https://registry.yarnpkg.com/highlight.js/-/highlight.js-11.11.1.tgz#fca06fa0e5aeecf6c4d437239135fabc15213585"
+  integrity sha512-Xwwo44whKBVCYoliBQwaPvtd/2tYFkRQtXDWj1nackaV2JPXx3L0+Jvd8/qCJ2p+ML0/XVkJ2q+Mr+UVdpJK5w==
 
 ignore@^5.2.0:
   version "5.3.2"
@@ -2195,6 +2243,11 @@ mkdirp@^3.0.1:
   resolved "https://registry.yarnpkg.com/mkdirp/-/mkdirp-3.0.1.tgz#e44e4c5607fb279c168241713cc6e0fea9adcb50"
   integrity sha512-+NsyUUAZDmo6YVHzL/stxSu3t9YS1iljliy3BSDrXJ/dkn1KYdmtZODGGjLcc9XLgVVpH4KshHB8XmZgMhaBXg==
 
+moment@^2.30.1:
+  version "2.30.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.30.1.tgz#f8c91c07b7a786e30c59926df530b4eac96974ae"
+  integrity sha512-uEmtNhbDOrWPFS+hdjFCBfy9f2YoyzRpwcl+DqpC6taX21FzsTLQVbMV/W7PzNSX6x/bhC1zA3c2UQ5NzH6how==
+
 ms@^2.1.1, ms@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.1.3.tgz#574c8138ce1d2b5861f0b44579dbadd60c6615b2"
@@ -2429,6 +2482,23 @@ react-dom@^19.0.0:
   integrity sha512-Xs1hdnE+DyKgeHJeJznQmYMIBG3TKIHJJT95Q58nHLSrElKlGQqDTR2HQ9fx5CN/Gk6Vh/kupBTDLU11/nDk/g==
   dependencies:
     scheduler "^0.26.0"
+
+react-fast-marquee@^1.6.5:
+  version "1.6.5"
+  resolved "https://registry.yarnpkg.com/react-fast-marquee/-/react-fast-marquee-1.6.5.tgz#98929ae93eef087a607a71e9d45ab76bba97dc16"
+  integrity sha512-swDnPqrT2XISAih0o74zQVE2wQJFMvkx+9VZXYYNSLb/CUcAzU9pNj637Ar2+hyRw6b4tP6xh4GQZip2ZCpQpg==
+
+react-highlight@^0.15.0:
+  version "0.15.0"
+  resolved "https://registry.yarnpkg.com/react-highlight/-/react-highlight-0.15.0.tgz#66749d01969853327d499959558f9468330cd9d8"
+  integrity sha512-5uV/b/N4Z421GSVVe05fz+OfTsJtFzx/fJBdafZyw4LS70XjIZwgEx3Lrkfc01W/RzZ2Dtfb0DApoaJFAIKBtA==
+  dependencies:
+    highlight.js "^10.5.0"
+
+react-icons@*, react-icons@^5.5.0:
+  version "5.5.0"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-5.5.0.tgz#8aa25d3543ff84231685d3331164c00299cdfaf2"
+  integrity sha512-MEFcXdkP3dLo8uumGI5xN3lDFNsRtrjbOEKDLD7yv76v4wpnEq2Lt2qeHaQOr34I/wPN3s3+N08WkQ+CW37Xiw==
 
 react-is@^16.13.1:
   version "16.13.1"
@@ -3027,3 +3097,8 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/yocto-queue/-/yocto-queue-0.1.0.tgz#0294eb3dee05028d31ee1a5fa2c556a6aaf10a1b"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zustand@^5.0.6:
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/zustand/-/zustand-5.0.6.tgz#a2da43d8dc3d31e314279e5baec06297bea70a5c"
+  integrity sha512-ihAqNeUVhe0MAD+X8M5UzqyZ9k3FFZLBTtqo6JLPwV53cbRB/mJwBI0PxcIgqhBBHlEs8G45OTDTMq3gNcLq3A==

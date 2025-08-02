@@ -1,0 +1,6 @@
+export { default as Hero } from "@/views/home/Hero"
+export { default as About } from "@/views/home/About"
+export { default as Blog } from "@/views/home/Blog"
+export { default as Offer } from "@/views/home/Offer"
+export { default as Partners } from "@/views/home/Partners"
+export { default as Projects } from "@/views/home/Projects"

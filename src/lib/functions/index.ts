@@ -1,0 +1,1 @@
+export { default as downgradeToHttp } from '@/funcs/downgradeToHttp';

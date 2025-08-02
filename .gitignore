@@ -39,3 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+/public/movies/sphere.mp4
+/public/movies/showcase.webm
+/public/movies/cell.mov
+/public/movies/blob.mp4
+/src/assets/movies

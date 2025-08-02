@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+
+.project-category-automate {
+    @apply ring-purple-700 dark:ring-fuchsia-500 text-purple-700 dark:text-fuchsia-500;
+
+    span {
+        @apply bg-purple-700 dark:bg-fuchsia-700;
+    }
+}
+
+.project-category-website {
+    @apply ring-blue-700 dark:ring-sky-400 text-blue-700 dark:text-sky-400;
+
+    span {
+        @apply bg-blue-700 dark:bg-sky-400;
+    }
+}
+
+.project-category-seo {
+    @apply ring-green-700 dark:ring-emerald-500 text-green-700 dark:text-emerald-500;
+
+    span {
+        @apply bg-green-700 dark:bg-emerald-700;
+    }
+}
+
+
+
+.no-scrollbar::-webkit-scrollbar {
+    width: 0;
+}
+
+
+.folder-mask {
+    mask-image: url('/masks/folder.png');
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+    -webkit-mask-image: url('/masks/folder.png');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+}
+
+
+
+
+.prose {
+    @apply text-lg;
+}
+
+.prose section {
+    margin-bottom: 20px;
+}
+
+.prose>section>* {
+    margin-bottom: 10px;
+}
+
+
+.prose h2 {
+    @apply text-3xl font-semibold;
+}
+
+.prose h3 {
+    @apply text-2xl font-bold;
+}
+
+.prose strong,
+.prose b {
+    font-weight: 800;
+}
+
+.prose ul {
+    @apply px-2 space-y-2;
+    list-style: circle inside;
+}
+
+.prose li {}

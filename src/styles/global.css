@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+::after,
+::before {
+  content: '';
+}
+
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+@theme inline {
+
+  --color-abbey-50: #f6f6f6;
+  --color-abbey-100: #e7e7e7;
+  --color-abbey-200: #d1d1d1;
+  --color-abbey-300: #b0b0b0;
+  --color-abbey-400: #888888;
+  --color-abbey-500: #6d6d6d;
+  --color-abbey-600: #5d5d5d;
+  --color-abbey-700: #4a4a4a;
+  --color-abbey-800: #454545;
+  --color-abbey-900: #3d3d3d;
+  --color-abbey-950: #262626;
+
+  --color-flamingo-50: #fff3ed;
+  --color-flamingo-100: #ffe4d4;
+  --color-flamingo-200: #ffc4a8;
+  --color-flamingo-300: #ff9b70;
+  --color-flamingo-400: #ff6537;
+  --color-flamingo-500: #ff4a1f;
+  --color-flamingo-600: #f02306;
+  --color-flamingo-700: #c71507;
+  --color-flamingo-800: #9e130e;
+  --color-flamingo-900: #7f140f;
+  --color-flamingo-950: #450505;
+
+  --color-turquoise-50: #effefc;
+  --color-turquoise-100: #c7fff7;
+  --color-turquoise-200: #90ffef;
+  --color-turquoise-300: #50f8e6;
+  --color-turquoise-400: #1ce5d4;
+  --color-turquoise-500: #04dcce;
+  --color-turquoise-600: #00a19a;
+  --color-turquoise-700: #05807d;
+  --color-turquoise-800: #096664;
+  --color-turquoise-900: #0d5452;
+  --color-turquoise-950: #003233;
+
+  --slider-offer-gradient: var(--color-abbey-100);
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --slider-offer-gradient: var(--color-abbey-900);
+  }
+
+}
+
+
+body {
+  @apply bg-abbey-50 text-neutral-800 duration-300 dark:bg-neutral-800 dark:text-neutral-50;
+  font-family: ui-sans-serif, system-ui, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+a:focus,
+a:focus-within,
+button:focus,
+button:focus-within {
+  outline: none;
+}

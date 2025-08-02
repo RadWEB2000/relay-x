@@ -1,0 +1,1 @@
+export const WP_API_KEY = `http://cms.relayx.pl/YJzcU7zyXd`

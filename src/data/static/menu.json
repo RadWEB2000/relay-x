@@ -1,0 +1,60 @@
+{
+    "menu": [
+        {
+            "label": "Start",
+            "uri": "/"
+        },
+        {
+            "label": "O mnie",
+            "uri": "/o-mnie",
+            "submenu": [
+                {
+                    "label": "Kim jestem?",
+                    "uri": "/o-mnie#kim-jestem"
+                },
+                {
+                    "label": "Życiorys",
+                    "uri": "/o-mnie#zyciorys"
+                },
+                {
+                    "label": "Doświadczenie",
+                    "uri": "/o-mnie#doswiadczenie-zawodowe"
+                },
+                {
+                    "label": "Opinie",
+                    "uri": "/o-mnie#opinie"
+                }
+            ]
+        },
+        {
+            "label": "Oferta",
+            "uri": "/oferta",
+            "submenu": [
+                {
+                    "label": "",
+                    "uri": ""
+                }
+            ]
+        },
+        {
+            "label": "",
+            "uri": "",
+            "submenu": [
+                {
+                    "label": "",
+                    "uri": ""
+                }
+            ]
+        },
+        {
+            "label": "",
+            "uri": "",
+            "submenu": [
+                {
+                    "label": "",
+                    "uri": ""
+                }
+            ]
+        }
+    ]
+}
