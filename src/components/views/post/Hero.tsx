@@ -12,7 +12,7 @@ type T_Hero = {
     image?: T_Image;
 }
 
-export default function Hero({ category, date, introduction, readingTime, title, image }: T_Hero) {
+export default function Hero({ category, date, introduction, title, image }: T_Hero) {
 
     const release = moment(date).locale('pl').format('DD MMM YYYY');
 

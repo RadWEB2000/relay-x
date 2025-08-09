@@ -1,4 +1,4 @@
-import { ServicePrimaryCard } from "@/ui/cards";
+import { ServicePrimaryCard } from "@/components/utils/cards";
 
 export default function Category() {
     return (

@@ -1,3 +1,9 @@
+export async function generateStaticParams(){
+    return [
+        { city: "Warsaw" }
+    ];
+}
+
 export default async function CityPage({ params }: {
     params: {
         city: string;

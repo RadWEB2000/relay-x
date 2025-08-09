@@ -1,4 +1,3 @@
-import img_1 from "@/img/worker.webp"
 import downgradeToHttp from "@/lib/functions/downgradeToHttp";
 import Image from "next/image"
 import Link from "next/link"
@@ -14,7 +13,7 @@ type card = {
     readingTime: string;
 }
 
-export default function BlogRegularCard({ category, date, excerpt, image, readingTime, title, uri }: card) {
+export default function BlogRegularCard({ category,  excerpt, image,  title, uri }: card) {
     return (
         <Link className="not-first:hidden md:nth-of-type-[2]:flex lg:nth-of-type-[3]:flex flex first:col-start-1 flex-col h-full bg-abbey-100/30 dark:bg-abbey-800/30 p-4 rounded-2xl hover:shadow-lg hover:shadow-abbey-200 dark:hover:shadow-abbey-800 linear duration-300 odd:hover:bg-flamingo-200 even:hover:bg-flamingo-100 dark:odd:hover:bg-flamingo-500 dark:even:hover:bg-flamingo-400 group" href={uri}>
             <figure

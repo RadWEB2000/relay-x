@@ -1,17 +1,34 @@
 import "@/css/post.css";
 import { TableOfContents } from "@/components/utils/ui";
-import Breadcrumbs from "@/components/utils/ui/Breadcrumbs";
 import GET_POST from "@/data/queries/GET_POST";
 import gutenbergBlocks from "@/lib/functions/gutenbergBlocks";
 import { Hero } from "@/views/post";
 import Link from "next/link";
 import Image from "next/image";
+import type { Metadata } from 'next'
 
+
+export async function generateMetadata({ params }:{params:{slug:string}}): Promise<Metadata> {
+  const {slug} =  params
+  // fetch post information
+   const { seo:{ metaTitle, metaDescription, ogTitle,ogDescription,canonical} } = await GET_POST(slug);
+ 
+  return {
+    title: metaTitle,
+    description: metaDescription,
+    openGraph:{
+        title:ogTitle,
+        description:ogDescription,
+        url: canonical,
+    }
+  }
+}
+ 
 export default async function PostPage({ params }: { params: { slug: string } }) {
 
     const { slug } = params;
 
-    const { page: { blocks, category, date, excerpt, tags, introduction, readingTime, image, title, author } } = await GET_POST(slug);
+    const { page: { blocks, category, date,  tags, introduction, readingTime, image, title, author } } = await GET_POST(slug);
 
     const toc: TableOfContentsBlock | null = blocks ? blocks.filter(item => item.name === 'rank-math/toc-block').map((item): TableOfContentsBlock => {
         return item

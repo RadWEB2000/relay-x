@@ -14,7 +14,16 @@ const nextConfig: NextConfig = {
         hostname: 'images.pexels.com'
       }
     ]
-  }
+  },
+  //  async redirects() {
+  //   return [
+  //     {
+  //       source: '/oferta/branza/:slug',
+  //       destination: '/oferta/:slug',
+  //       permanent: true, // 301 redirect (zmień na false dla tymczasowego 307)
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;

@@ -1,4 +1,3 @@
-import { ServicePrimaryCard } from "@/ui/cards"
 import { Category, Form, Hero } from "@/views/service"
 import content from "@/static/seo-page.json"
 

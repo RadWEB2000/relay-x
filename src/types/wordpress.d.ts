@@ -1,4 +1,3 @@
-import { content } from '@/static/seo-page.json';
 export { }
 declare global {
 
@@ -382,6 +381,138 @@ declare global {
             ogTitle: string;
             ogDescription: string;
             canonical: string;
+        }
+    }
+
+    interface BlogPageRequest {
+        page: {
+            title: string;
+            blocks?: Array<WP_GutenbergBlocks>;
+            content: string;
+            blogpage: {
+                introduction: string;
+            };
+            seo: {
+                title: string;
+                description: string;
+                openGraph: {
+                    description: string;
+                    title: string;
+                }
+            };
+        }
+        tags:{
+            nodes:Array<{
+                count:number;
+                name:string;
+                uri:string;
+            }>
+        }
+        categories:{
+            nodes:Array<{name:string;uri:string;}>
+        }
+        posts:{
+            pageInfo: {
+                startCursor: string;
+                hasPreviousPage: boolean;
+                hasNextPage: boolean;
+                endCursor: string;    
+            }       
+            nodes: Array<{
+                categories: {
+                    nodes: Array<{
+                        name: string;
+                        uri: string;
+                    }>
+                };
+                date: string;
+                excerpt: string;
+                featuredImage: {
+                    node: {
+                        altText: string;
+                        sourceUrl: string;
+                        title: string;
+                    }
+                };
+                title: string;
+                uri: string;
+                slug: string;
+            }>
+        }
+    }
+
+    interface BlogPageResponse {
+        page:{
+            title:string;
+            blocks?: Array<GutenbergBlocks>;
+            content:string;
+            introduction:string;
+            tags:Array<T_Link & {count:number}>;
+            categories:Array<T_Link>;
+            posts: Array<{
+                categories: Array<T_Link>;
+                date: string;   
+                excerpt: string;
+                image: T_Image;
+                title: string;
+                uri: string;
+                slug?: string;
+            }>
+        };
+        pagination:{
+            startCursor: string;
+            hasPreviousPage: boolean;
+            hasNextPage: boolean;
+            endCursor: string;
+        }
+        seo: {
+            metaTitle: string;
+            metaDescription: string;
+            ogTitle: string;
+            ogDescription: string;
+        }
+    }
+
+    interface IndustriesLinksRequest {
+        industries:{
+            nodes:Array<{
+                slug:string;
+                uri:string;
+            }>
+        }
+    }
+    interface IndustriesLinksResponse {
+        industries:Array<{
+                slug:string;
+                uri:string;
+            }>
+    }
+
+    interface IndustryPageRequest {
+        industry: {
+            title: string;
+            blocks?: Array<WP_GutenbergBlocks>;
+            seo: {
+                title: string;
+                description: string;
+                openGraph: {
+                    description: string;
+                    title: string;
+                }
+            };
+        }
+    }
+
+     interface IndustryPageResponse {
+        page:{
+            title:string;
+            blocks?: Array<GutenbergBlocks>;
+        };
+        seo: {
+            metaTitle: string;
+            metaDescription: string;
+            ogTitle: string;
+            ogDescription: string;
         }
     }
 }

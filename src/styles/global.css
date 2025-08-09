@@ -75,3 +75,8 @@ button:focus,
 button:focus-within {
   outline: none;
 }
+
+
+input, textarea , input:focus, textarea:focus,input:hover, textarea:hover  {
+    outline:none;
+}
